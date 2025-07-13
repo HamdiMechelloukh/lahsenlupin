@@ -1,0 +1,206 @@
+:root {
+    --bg-white: #FFFFFF;
+    --text-black: #000000;
+    --text-dark: #1C3D3A;
+    --accent-orange: #E94F1D;
+    --accent-gold: #D98C24;
+    --divider: #EDEDED;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+/* Crée de l'espace supplémentaire en bas de page */
+.hero {
+    padding-top: 800px;
+    /* augmente cette valeur si nécessaire */
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 800px;
+}
+
+/* Espacement vertical augmenté dans la hero-section */
+.hero h1,
+.hero .lead {
+    margin-bottom: 40px;
+}
+
+.colordesign {
+    color: var(--accent-orange)
+}
+
+/* Pour simuler un déroulement infini */
+body::after {
+    content: '';
+    display: block;
+    height: 500px;
+    background-color: transparent;
+}
+
+/* Espacement global des sections */
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.navbar {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--divider);
+}
+
+.navbar .nav-link {
+    color: var(--text-dark);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-orange);
+}
+
+.display-4 {
+    color: var(--text-dark)
+}
+
+.lead {
+    color: var(--text-dark)
+}
+
+.btn {
+    background-color: var(--text-dark);
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.section-divider {
+    border-top: 1px solid var(--divider);
+    margin: 2rem 0;
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+.hero-logo {
+    max-width: 100%;
+    /* le logo ne dépasse jamais la largeur du conteneur parent */
+    height: auto;
+    /* conserve les proportions de l'image */
+    width: 500px;
+    /* ajuste selon la taille que tu préfères */
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    opacity: 0.7;
+}
+
+footer {
+    position: relative;
+    z-index: 10;
+    margin-top: 100px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icon {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-hover {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #1C3D3A;
+    transform: scale(1.15);
+}
+
+.social-icon:hover .icon-normal {
+    opacity: 0;
+}
+
+.social-icon:hover .icon-hover {
+    opacity: 1;
+}
+
+.services-section {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.service-card {
+    border: 1px solid #EDEDED;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-white);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h5 {
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+}
+.skills-section {
+  background-color: #ffffff;
+}
+
+.skill-box {
+  border: 1px solid #EDEDED;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+
+.text-primary {
+  color: var(--text-dark);
+}
