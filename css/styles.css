@@ -208,3 +208,21 @@ footer {
 .text-primary {
     color: var(--text-dark);
 }
+
+.designer {
+    width: 700px;
+    height: auto;
+}
+
+/* Pour la section Online Presence uniquement */
+#online-presence .social-icon img {
+    width: 64px;
+    height: 64px;
+}
+
+#online-presence .icon-hover {
+    top: 10px;
+    left: 10px;
+    width: 64px;
+    height: 64px;
+}
