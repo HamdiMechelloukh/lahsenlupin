@@ -167,11 +167,21 @@
         <h3 class='text-center mb-4'>Do you have a project that needs a creative touch?
           Let's get your project rolling, just shoot over the details by filling out the forms or by emailing at
           <strong>fasanjapan@gmail.com</strong></h2>
-          <form data-aos='fade-up'>
-            <div class='mb-3'><input type='text' class='form-control' placeholder='Nom'></div>
-            <div class='mb-3'><input type='email' class='form-control' placeholder='Email'></div>
-            <div class='mb-3'><textarea class='form-control' rows='5' placeholder='Message'></textarea></div><button
-              class='btn btn-success'>Envoyer</button>
+          <form action="https://formspree.io/f/mqalzven" method="POST" data-aos='fade-up'>
+            <div class='mb-3'>
+              <input type='text' name="name" class='form-control' placeholder='Nom' required>
+            </div>
+            <div class='mb-3'>
+              <input type='email' name="email" class='form-control' placeholder='Email' required>
+            </div>
+            <div class='mb-3'>
+              <textarea name="message" class='form-control' rows='5' placeholder='Message' required></textarea>
+            </div>
+
+            <!-- Anti-spam (invisible aux humains) -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button class='btn btn-success' type="submit">Envoyer</button>
           </form>
       </div>
       <div class="mt-5">
