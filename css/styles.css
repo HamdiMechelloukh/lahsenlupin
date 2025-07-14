@@ -29,11 +29,7 @@ body {
     padding-bottom: 800px;
 }
 
-/* Espacement vertical augmenté dans la hero-section */
-.hero h1,
-.hero .lead {
-    margin-bottom: 40px;
-}
+
 
 .colordesign {
     color: var(--accent-orange)
@@ -105,8 +101,9 @@ section {
     /* le logo ne dépasse jamais la largeur du conteneur parent */
     height: auto;
     /* conserve les proportions de l'image */
-    width: 500px;
+    width: 700px;
     /* ajuste selon la taille que tu préfères */
+    margin-bottom: 7rem;
 }
 
 .footer-logo {
