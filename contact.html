@@ -39,7 +39,7 @@
         <h3 class='text-center mb-4'>Do you have a project that needs a creative touch?
           Let's get your project rolling, just shoot over the details by filling out the forms or by emailing at
           <strong>fasanjapan@gmail.com</strong></h2>
-          <form action="https://formspree.io/f/mqalzven" method="POST" data-aos='fade-up'>
+          <form action="https://formsubmit.co/fasanjapan@gmail.com" method="POST" data-aos='fade-up'>
             <div class='mb-3'>
               <input type='text' name="name" class='form-control' placeholder='Nom' required>
             </div>
@@ -50,10 +50,14 @@
               <textarea name="message" class='form-control' rows='5' placeholder='Message' required></textarea>
             </div>
 
-            <!-- Anti-spam (invisible aux humains) -->
-            <input type="text" name="_gotcha" style="display:none">
+            <!-- Redirection personnalisée -->
+            <input type="hidden" name="_next" value="https://www.lupindesignstudio.jp/thank.html">
+            <!-- Anti-spam -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Désactiver captcha Formsubmit -->
+            <input type="hidden" name="_captcha" value="false">
 
-            <button class='btn btn-success' type="submit">Envoyer</button>
+            <button type="submit">Envoyer</button>
           </form>
       </div>
       <div class="mt-5">
@@ -67,6 +71,10 @@
             <img src="img/lancer-logo.png" alt="lancer" class="icon-normal">
             <img src="img/lancer-logo-hover.png" alt="lancer Hover" class="icon-hover">
           </a>
+          <a href="https://www.line.com" target="_blank" class="social-icon d-inline-block">
+              <img src="img/line.png" alt="line" class="icon-normal">
+              <img src="img/line_logo_hover.png" alt="line Hover" class="icon-hover">
+            </a>
         </div>
       </div>
     </section>
