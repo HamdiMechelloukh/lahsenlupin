@@ -211,7 +211,7 @@ footer {
 }
 
 .designer {
-    width: 600px;
+    width: 60%;
     height: auto;
 }
 
@@ -274,6 +274,10 @@ footer {
   background: white;
   text-align: center;
   margin: 0 auto;         /* centre horizontalement */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
 }
 
 .card-image {
@@ -285,7 +289,12 @@ footer {
 }
 
 .card-text {
-  padding: 28px 24px;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
 }
 
 .card-text h3 {
@@ -308,4 +317,16 @@ footer {
 
 .row--centered {
   justify-content: center;
+}
+
+.hi-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hi-img {
+    max-width: 200px;
+  }
 }
