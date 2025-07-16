@@ -168,6 +168,7 @@ footer {
 .services-section {
     background-color: var(--bg-white);
     color: var(--text-dark);
+    
 }
 
 .service-card {
@@ -215,14 +216,96 @@ footer {
 }
 
 /* Pour la section Online Presence uniquement */
-#online-presence .social-icon img {
-    width: 64px;
-    height: 64px;
+.online-presence {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-#online-presence .icon-hover {
-    top: 10px;
-    left: 10px;
-    width: 64px;
-    height: 64px;
+.presence-grid {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.presence-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ⬅️ centre tous les enfants (img, h3, p) */
+  max-width: 280px;
+}
+
+.presence-item img {
+  width: 300px;
+  height: 300px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.presence-item img:hover {
+  transform: scale(1.1);
+}
+
+.presence-item h3 {
+  margin: 20px 0 10px;
+  font-size: 1.2rem;
+  color: #1C3D3A;
+}
+
+.presence-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .presence-item img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.card-container {
+  width: 100%;
+  max-width: 440px;       /* légèrement plus grand */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: white;
+  text-align: center;
+  margin: 0 auto;         /* centre horizontalement */
+}
+
+.card-image {
+  height: 280px;          /* image plus grande */
+  background-size: contain;       /* centrée ET contenue sans rognage */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #f8f8f8;       /* fond neutre si image pas pleine */
+}
+
+.card-text {
+  padding: 28px 24px;
+}
+
+.card-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1C3D3A;
+}
+
+.card-text p {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.card-container:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.row--centered {
+  justify-content: center;
 }
