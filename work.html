@@ -9,15 +9,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand text-success fw-bold" href="index.html">
-        <img src="img/logo.webp" alt="Logo Lupin" height="60">
+        <img src="img/logo.webp" alt="Logo Lupin" height="60" loading="lazy">
       </a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
@@ -36,28 +34,28 @@
     <section class="portfolio">
   <h2 class="text-center fw-bold">Portfolio</h2>
   <div class="portfolio-grid">
-    <img src='img/racing.webp' alt="..." />
-    <img src='img/foxdetective.webp' alt="..." />
-    <img src='img/jimny.webp' alt="..." />
-    <img src='img/espresso.webp' alt="..." />
-    <img src='img/chicken.webp' alt="..." />
-    <img src='img/stansmith.webp' alt="..." />
-    <img src='img/beppu_surf.webp' alt="..." />
-    <img src='img/shibuyaskate.webp' alt="..." />
-    <img src='img/triangle.webp' alt="..." />
-    <img src='img/bodytruck.webp' alt="..." />
-    <img src='img/3pigs.webp' alt="..." />
-    <img src='img/hoikuen.webp' alt="..." />
-    <img src='img/dreamspace.png' alt="..." />
-    <img src='img/rentacar.webp' alt="..." />
-    <img src='img/badgirl.webp' alt="..." />
-    <img src='img/foot.webp' alt="..." />
-    <img src='img/ancienriz.webp' alt="..." />
-    <img src='img/panda.webp' alt="..." />
-    <img src='img/lapin.webp' alt="..." />
-    <img src='img/shogun.webp' alt="..." />
-    <img src='img/yen.webp' alt="..." />
-    <img src='img/vache.webp' alt="..." />
+    <img src='img/racing.webp' alt="..." loading="lazy"/>
+    <img src='img/foxdetective.webp' alt="..." loading="lazy"/>
+    <img src='img/jimny.webp' alt="..." loading="lazy"/>
+    <img src='img/espresso.webp' alt="..." loading="lazy"/>
+    <img src='img/chicken.webp' alt="..." loading="lazy"/>
+    <img src='img/stansmith.webp' alt="..." loading="lazy"/>
+    <img src='img/beppu_surf.webp' alt="..." loading="lazy"/>
+    <img src='img/shibuyaskate.webp' alt="..." loading="lazy"/>
+    <img src='img/triangle.webp' alt="..." loading="lazy"/>
+    <img src='img/bodytruck.webp' alt="..." loading="lazy"/>
+    <img src='img/3pigs.webp' alt="..." loading="lazy"/>
+    <img src='img/hoikuen.webp' alt="..." loading="lazy"/>
+    <img src='img/dreamspace.png' alt="..." loading="lazy"/>
+    <img src='img/rentacar.webp' alt="..." loading="lazy"/>
+    <img src='img/badgirl.webp' alt="..." loading="lazy"/>
+    <img src='img/foot.webp' alt="..." loading="lazy"/>
+    <img src='img/ancienriz.webp' alt="..." loading="lazy"/>
+    <img src='img/panda.webp' alt="..." loading="lazy"/>
+    <img src='img/lapin.webp' alt="..." loading="lazy"/>
+    <img src='img/shogun.webp' alt="..." loading="lazy"/>
+    <img src='img/yen.webp' alt="..." loading="lazy"/>
+    <img src='img/vache.webp' alt="..." loading="lazy"/>
     <!-- autant que tu veux -->
   </div>
 </section>
@@ -67,21 +65,11 @@
       <p>© 2025 Lupin Design Studio – Handcrafted Branding.</p>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
   <script>
     AOS.init({ once: true });
-    $(document).ready(function () {
-      $('.slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
-        responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }]
-      });
-    });
   </script>
 </body>
 

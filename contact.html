@@ -9,15 +9,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand text-success fw-bold" href="index.html">
-        <img src="img/logo.webp" alt="Logo Lupin" height="60">
+        <img src="img/logo.webp" alt="Logo Lupin" height="60" loading="lazy">
       </a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
@@ -36,7 +34,7 @@
     <section class='py-5'>
       <div class='container'>
         <div class="d-flex justify-content-center mb-4">
-          <img src="img/contact.webp" alt="Portrait" class="img-fluid" style="max-width: 400px;">
+          <img src="img/contact.webp" alt="Portrait" class="img-fluid" style="max-width: 400px;" loading="lazy">
         </div>
         <h2 class='text-center mb-4'><strong>Do you have a project that needs a creative touch?</strong></h2>
         <h3 class='text-center mb-4'>Do you have a project that needs a creative touch?
@@ -67,16 +65,16 @@
         <p class="text-center">you can also find me on : </p>
         <div class="social-icons mt-4">
           <a href="https://instagram.com/lupindesignstudio1990" class="social-icon">
-            <img src="img/instagram-logo.svg" alt="Instagram" class="icon-normal">
-            <img src="img/instagram-logo-hover.svg" alt="Instagram Hover" class="icon-hover">
+            <img src="img/instagram-logo.svg" alt="Instagram" class="icon-normal" loading="lazy">
+            <img src="img/instagram-logo-hover.svg" alt="Instagram Hover" class="icon-hover" loading="lazy">
           </a>
           <a href="https://www.lancers.jp/profile/FrenchFasan" class="social-icon">
-            <img src="img/lancer-logo.webp" alt="lancer" class="icon-normal">
-            <img src="img/lancer-logo-hover.webp" alt="lancer Hover" class="icon-hover">
+            <img src="img/lancer-logo.webp" alt="lancer" class="icon-normal" loading="lazy">
+            <img src="img/lancer-logo-hover.webp" alt="lancer Hover" class="icon-hover" loading="lazy">
           </a>
           <a href="https://www.line.com" target="_blank" class="social-icon d-inline-block">
-            <img src="img/line.webp" alt="line" class="icon-normal">
-            <img src="img/line_logo_hover.webp" alt="line Hover" class="icon-hover">
+            <img src="img/line.webp" alt="line" class="icon-normal" loading="lazy">
+            <img src="img/line_logo_hover.webp" alt="line Hover" class="icon-hover" loading="lazy">
           </a>
         </div>
       </div>
@@ -87,21 +85,11 @@
       <p>© 2025 Lupin Design Studio – Handcrafted Branding.</p>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
   <script>
     AOS.init({ once: true });
-    $(document).ready(function () {
-      $('.slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
-        responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }]
-      });
-    });
   </script>
 </body>
 
