@@ -29,6 +29,12 @@ body {
     text-shadow: 0.04em 0 0 currentColor;
 }
 
+.jp-text {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -285,6 +291,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-image {
