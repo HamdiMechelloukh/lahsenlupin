@@ -122,7 +122,7 @@ section {
     /* conserve les proportions de l'image */
     width: 700px;
     /* ajuste selon la taille que tu préfères */
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 .footer-logo {
@@ -223,9 +223,17 @@ footer {
     color: var(--text-dark);
 }
 
+.text-dark {
+    color: var(--text-dark);
+}
+
 .designer {
     width: 60%;
     height: auto;
+}
+
+img.about {
+  margin-top: -200px; /* ajuste la valeur à ton besoin */
 }
 
 /* Pour la section Online Presence uniquement */
