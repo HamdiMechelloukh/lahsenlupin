@@ -8,8 +8,8 @@
 }
 
 strong {
-  font-weight: 900;
-  text-shadow: 0.03em 0 0 currentColor;
+  font-weight: 700;
+  text-shadow: 0.08em 0 0 currentColor;
 }
 
 body,
@@ -26,7 +26,7 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    text-shadow: 0.04em 0 0 currentColor;
+    text-shadow: 0.08em 0 0 currentColor;
 }
 
 main {
