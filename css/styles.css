@@ -109,6 +109,9 @@ section {
 }
 
 .hero-logo {
+
+    margin-top: 7rem;
+
     max-width: 100%;
     /* le logo ne dépasse jamais la largeur du conteneur parent */
     height: auto;
