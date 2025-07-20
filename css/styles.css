@@ -7,6 +7,11 @@
     --divider: #EDEDED;
 }
 
+strong {
+  font-weight: 900;
+  text-shadow: 0.03em 0 0 currentColor;
+}
+
 body,
 html {
     height: 100%;
@@ -16,11 +21,12 @@ html {
 body {
     background-color: var(--bg-white);
     color: var(--text-dark);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     padding-top: 70px;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    text-shadow: 0.04em 0 0 currentColor;
 }
 
 main {
