@@ -27,12 +27,15 @@ body {
     display: flex;
     flex-direction: column;
     text-shadow: 0.04em 0 0 currentColor;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .jp-text {
   word-break: keep-all;
-  overflow-wrap: break-word;
-  line-height: 1.6;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
 }
 
 main {
@@ -43,11 +46,12 @@ main {
 
 /* Crée de l'espace supplémentaire en bas de page */
 .hero {
-    padding-top: 800px;
-    /* augmente cette valeur si nécessaire */
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 800px;
+  padding-top: 140px; /* espace sous navbar */
+  padding-bottom: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .colordesign {
@@ -113,16 +117,11 @@ section {
 }
 
 .hero-logo {
-
-    margin-top: 8rem;
-
-    max-width: 100%;
-    /* le logo ne dépasse jamais la largeur du conteneur parent */
-    height: auto;
-    /* conserve les proportions de l'image */
-    width: 700px;
-    /* ajuste selon la taille que tu préfères */
-    margin-bottom: 4rem;
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  display: block;
+  margin: 2rem auto;
 }
 
 .footer-logo {
@@ -233,7 +232,7 @@ footer {
 }
 
 img.about {
-  margin-top: -200px; /* ajuste la valeur à ton besoin */
+  margin-top: -350px; /* ajuste la valeur à ton besoin */
 }
 
 /* Pour la section Online Presence uniquement */
@@ -277,13 +276,6 @@ img.about {
 .presence-item p {
   font-size: 0.95rem;
   color: #555;
-}
-
-@media (max-width: 768px) {
-  .presence-item img {
-    width: 180px;
-    height: 180px;
-  }
 }
 
 .card-container {
@@ -347,12 +339,6 @@ img.about {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  .hi-img {
-    max-width: 200px;
-  }
-}
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -369,4 +355,115 @@ img.about {
 
 .portfolio-grid img:hover {
   transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .container,
+  section,
+  .hero,
+  .services-section,
+  #skills,
+  #online-presence,
+  #hi-there {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .lead,
+  .card-text,
+  .text-muted,
+  .text-dark {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  body {
+    padding-top: 80px;
+  }
+
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    padding: 0 3rem; /* ✅ espace sur les côtés */ 
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.5;            
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
+    display: block;
+  }
+
+  .hero h1 strong {
+    display: inline-block;       /* ✅ évite que ça casse tout en bloc */
+    width: 100%;
+  }
+  .lead {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .hero-logo {
+    max-width: 280px;
+    width: 90%;
+    height: auto;
+    margin: 2rem auto;
+  }
+
+  .display-4 {
+    font-size: 1.8rem;
+  }
+
+  /* Section Services */
+  .card-image {
+    height: 200px;
+    background-size: cover;
+  }
+
+  .card-text h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Section Skills */
+  #skills .img-fluid {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #skills .text-end {
+    text-align: center !important;
+    padding-right: 0 !important;
+  }
+
+  /* Section Online Presence */
+  .presence-item img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .presence-item h3 {
+    font-size: 1rem;
+  }
+
+  /* Bonjour section image */
+  img.about {
+    margin-top: 0;
+    max-width: 90%;
+  }
+
+  /* Formulaire bouton */
+  form button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  /* Centrage des réseaux sociaux */
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
