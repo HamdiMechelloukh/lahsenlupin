@@ -46,12 +46,10 @@ body {
 
 .jp-text {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 2rem);
   line-height: 1.6;
   word-break: keep-all;
   overflow-wrap: break-word;
-  line-break: strict;
-  -webkit-line-break: strict;
-  -webkit-text-size-adjust: 100%;
 }
 
 main {
@@ -298,7 +296,7 @@ img.about {
 }
 
 .card-image {
-  height: 280px;
+  height: auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -367,7 +365,7 @@ img.about {
   .hero {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 100px;
+    padding-top: 0px;
     padding-bottom: 40px;
   }
 
@@ -422,9 +420,9 @@ img.about {
   }
 
   .card-image {
-    height: 200px;
-    background-size: cover;
-  }
+    height: auto;
+  background-size: contain;
+  aspect-ratio: 16 / 9; /* pour garder des proportions propres */
 
   .card-text h3 {
     font-size: 1.2rem;
