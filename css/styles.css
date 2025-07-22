@@ -49,6 +49,10 @@ body {
   line-height: 1.6;
   word-break: keep-all;
   overflow-wrap: break-word;
+
+   /* Ajouts importants pour le japonais : */
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 main {
@@ -372,35 +376,25 @@ img.about {
   .card-text,
   .text-muted,
   .text-dark {
-    font-size: 1rem;
+    font-size: 0.85rem;
     line-height: 1.6;
   }
 
-  .jp-text {
-    font-size: 1.2rem;
-  }
-
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.5;
-    word-break: break-word;
     white-space: normal;
-    overflow-wrap: break-word;
     text-align: center;
     display: block;
   }
 
   .hero h1 strong {
-    display: inline-block;
-    width: 100%;
-  }
+  display: inline;
+}
 
   .lead {
-    font-size: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  word-break: break-word;
-  overflow-wrap: break-word;
   }
 
   .hero-logo {
