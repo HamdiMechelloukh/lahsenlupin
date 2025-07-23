@@ -89,7 +89,6 @@ section {
 /* HEADER & NAVBAR */
 .navbar {
     background-color: var(--bg-white);
-    border-bottom: 1px solid var(--divider);
 
     /* Contrôle de largeur agressif pour la navbar elle-même */
     width: 100% !important;
@@ -188,7 +187,6 @@ section {
 
 /* SECTION DIVIDER */
 .section-divider {
-    border-top: 1px solid var(--divider);
     margin: 2rem 0;
 }
 
