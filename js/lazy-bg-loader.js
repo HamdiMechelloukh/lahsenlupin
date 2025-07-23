@@ -13,3 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lazyBackgrounds.forEach(bg => observer.observe(bg));
   });
+
+
+  Array.from(document.querySelectorAll('*')).forEach(el => {
+  if (el.offsetWidth > document.documentElement.clientWidth) {
+    el.style.border = '2px solid yellow';
+    console.log('⬆️ Element too wide:', el);
+  }
+});

@@ -6,88 +6,107 @@
     --accent-orange: #E94F1D;
     --accent-gold: #D98C24;
     --divider: #EDEDED;
+
+    /* Responsive Spacing */
+    --bs-gutter-x: 1.5rem; /* Bootstrap's default horizontal gutter (24px) */
+    --section-padding-y: 9rem; /* For large sections (144px) */
+    --section-padding-y-md: 4rem; /* (64px) */
+    --section-padding-y-sm: 2.5rem; /* (40px) */
+
+    --hero-padding-top: 140px;
+    --hero-padding-bottom: 60px;
+    --hero-padding-x: 3rem; /* (48px) Default for larger screens */
+
+    --navbar-height: 70px;
 }
 
-/* GLOBAL */
-strong {
-    font-weight: 700;
-    text-shadow: 0.04em 0 0 currentColor;
+/* GLOBAL RESET & BASE STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* !!! TRÈS IMPORTANT : RETIREZ CETTE LIGNE EN PRODUCTION. Elle est la cause de nombreux problèmes de débordement. */
+    /* outline: 1px solid red; */
 }
 
-body,
 html {
     height: 100%;
-    margin: 0;
-}
-
-.navbar .navbar-nav {
-    margin-left: auto;
-    margin-right: 1rem;
-    /* ou 16px */
+    overflow-x: hidden; /* Prevent horizontal scrollbar on HTML */
 }
 
 body {
     background-color: var(--bg-white);
     color: var(--text-dark);
     font-family: 'Noto Sans JP', sans-serif;
-    padding-top: 70px;
-    overflow-x: hidden;
+    margin: 0;
+    padding-top: var(--navbar-height); /* Space for fixed navbar */
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    text-shadow: 0.04em 0 0 currentColor; /* Subtle text shadow for crispness */
+
+    /* Contrôle de largeur pour le body pour éviter tout débordement global */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+strong {
+    font-weight: 700;
     text-shadow: 0.04em 0 0 currentColor;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
-.container {
-    max-width: 1200px;
-    width: 90%;
-}
-
+/* JPN text specific styles */
 .jp-text {
     font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
     line-height: 1.6;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-
-    /* Ajouts importants pour le japonais : */
-    line-break: strict;
-    text-wrap: pretty;
+    word-break: keep-all; /* Prevents breaking Japanese words in the middle */
+    overflow-wrap: break-word; /* Allows long words to break if necessary */
+    line-break: strict; /* Controls how lines are broken */
+    text-wrap: pretty; /* Modern text wrapping property for better aesthetics */
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Allows main content to grow and push footer down */
     display: flex;
     flex-direction: column;
 }
 
-.hero {
-    padding-top: 140px;
-    padding-bottom: 60px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-.colordesign {
-    color: var(--accent-orange);
+section {
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
 }
 
 .no-bottom-padding {
     padding-bottom: 0 !important;
 }
 
-section {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-}
-
+/* HEADER & NAVBAR */
 .navbar {
     background-color: var(--bg-white);
     border-bottom: 1px solid var(--divider);
+
+    /* Contrôle de largeur agressif pour la navbar elle-même */
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    overflow-x: hidden; /* Cache tout débordement interne */
+}
+
+.navbar .navbar-nav {
+    margin-right: 1rem;
 }
 
 .navbar .nav-link {
@@ -99,13 +118,51 @@ section {
     color: var(--accent-orange);
 }
 
-.display-4,
-.lead {
+.navbar-brand img {
+    height: 60px; /* Default height for larger screens */
+    width: auto; /* Width scales proportionally */
+    max-width: 100%; /* S'assurer qu'il ne dépasse pas la largeur de son parent */
+}
+
+/* HERO SECTION */
+.hero {
+    padding-top: var(--hero-padding-top);
+    padding-bottom: var(--hero-padding-bottom);
+    text-align: center; /* Ensures text and inline elements are centered by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: var(--hero-padding-x);
+    padding-right: var(--hero-padding-x);
+}
+
+.hero-logo {
+    width: 100%;
+    height: auto;
+    max-width: 750px;
+    display: block;
+    margin: 2rem auto 3rem auto;
+}
+
+.colordesign {
+    color: var(--accent-orange);
+}
+
+/* TYPOGRAPHY & BUTTONS */
+.display-4 {
+    font-size: calc(1.8rem + 1.5vw);
     color: var(--text-dark);
 }
 
-.btn {
-    background-color: var(--text-dark);
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    text-align: center; /* Explicitly center lead text */
+}
+
+.text-primary,
+.text-dark {
+    color: var(--text-dark) !important;
 }
 
 .btn-primary {
@@ -119,34 +176,200 @@ section {
     border-color: var(--accent-gold);
 }
 
+.btn-success {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: var(--bg-white);
+}
+.btn-success:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+/* SECTION DIVIDER */
 .section-divider {
     border-top: 1px solid var(--divider);
     margin: 2rem 0;
 }
 
-.navbar-brand img {
-    height: 60px;
-    width: auto;
+/* SERVICES SECTION */
+.services-section {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
 }
 
-.hero-logo {
+/* CARDS STYLES */
+.card-container {
     width: 100%;
+    max-width: 440px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    background: white;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* Keep minimum height for consistent cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-image {
+    height: 280px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #f8f8f8;
+}
+
+.card-text {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.card-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1C3D3A;
+}
+
+.card-text p {
+    margin-top: 12px;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* SKILLS SECTION - "Image haut-gauche, Texte bas-droite" */
+.skills-section {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+/* Conteneur de chaque paire image/texte */
+.skill-pair {
+    margin-bottom: 5rem; /* Espacement entre les paires, ajustez si nécessaire */
+    text-align: center; /* Pour centrer les blocs sur mobile par défaut */
+}
+
+/* Styles pour les images */
+.skill-image {
+    max-width: 400px; /* Taille max de l'image comme avant */
+    width: 100%; /* S'adapte à la largeur du parent */
     height: auto;
-    max-width: 750px;
-    display: block;
-    margin: 2rem auto;
+    display: block; /* Important pour les marges automatiques */
+    margin-bottom: 1.5rem; /* Espace entre l'image et le texte en dessous */
+    margin-left: 0; /* Par défaut aligné à gauche */
+    margin-right: auto; /* Pousse l'image à gauche si l'espace est plus large que max-width */
+}
+
+/* Styles pour les blocs de texte */
+.skill-text-block {
+    text-align: right; /* Par défaut, aligné à droite pour le desktop */
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 600px; /* Conserver une max-width pour le texte si souhaité */
+    margin-left: auto; /* Pousse le texte à droite dans le conteneur */
+    margin-right: auto; /* Permet un centrage sur mobile */
+}
+
+/* ABOUT SECTION */
+img.about {
+    margin-top: -200px;
+    max-width: 100%;
+    height: auto;
+}
+
+.designer {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* ONLINE PRESENCE SECTION */
+.online-presence {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.presence-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.presence-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 280px;
+}
+
+.presence-item img {
+    width: 300px;
+    height: 300px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.presence-item img:hover {
+    transform: scale(1.1);
+}
+
+.presence-item h3 {
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+    color: #1C3D3A;
+}
+
+.presence-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* PORTFOLIO GRID */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* FOOTER & SOCIAL ICONS */
+footer {
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
 }
 
 .footer-logo {
     height: 50px;
     width: auto;
     opacity: 0.7;
-}
-
-footer {
-    position: relative;
-    z-index: 10;
-    flex-shrink: 0;
 }
 
 .social-icons {
@@ -191,292 +414,194 @@ footer {
     opacity: 1;
 }
 
-#skills img {
-    max-width: 400px;
-}
+/* --- MEDIA QUERIES --- */
 
-.services-section,
-.skills-section {
-    background-color: var(--bg-white);
-    color: var(--text-dark);
-}
-
-.service-card,
-.skill-box {
-    border: 1px solid #EDEDED;
-    border-radius: 12px;
-    background-color: var(--bg-white);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover,
-.skill-box:hover,
-.card-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
-
-.service-card h5 {
-    font-weight: 600;
-}
-
-.service-card p {
-    font-size: 0.95rem;
-}
-
-.text-primary,
-.text-dark {
-    color: var(--text-dark);
-}
-
-.designer {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    margin: 0 auto;
-}
-
-img.about {
-    margin-top: -200px;
-}
-
-.online-presence {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.presence-grid {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.presence-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 280px;
-}
-
-.presence-item img {
-    width: 300px;
-    height: 300px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.presence-item img:hover {
-    transform: scale(1.1);
-}
-
-.presence-item h3 {
-    margin: 20px 0 10px;
-    font-size: 1.2rem;
-    color: #1C3D3A;
-}
-
-.presence-item p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.card-container {
-    width: 100%;
-    max-width: 440px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    background: white;
-    text-align: center;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 400px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-image {
-    height: 280px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #f8f8f8;
-}
-
-.card-text {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-}
-
-.card-text h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #1C3D3A;
-}
-
-.card-text p {
-    margin-top: 12px;
-    font-size: 1.05rem;
-    color: #444;
-    line-height: 1.6;
-}
-
-.row--centered {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.hi-img {
-    max-width: 320px;
-    width: 100%;
-    height: auto;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    padding: 40px 0;
-}
-
-.portfolio-grid img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-grid img:hover {
-    transform: scale(1.03);
-}
-
-@media (max-width: 768px) {
-
-    .container-fluid.width-reduced{
-        width: 87%;
+/* Styles pour desktop (min-width: 768px) */
+@media (min-width: 768px) {
+    /* Image en haut à gauche - déjà géré par les styles par défaut (.skill-image) */
+    .skill-image {
+        margin-left: 0; /* S'assurer qu'il est à gauche de son conteneur */
+        margin-right: auto; /* Pousse l'image à gauche */
     }
 
-    .container-fluid.no-margin {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+    /* Texte en bas à droite - déjà géré par les styles par défaut (.skill-text-block) */
+    .skill-text-block {
+        margin-left: auto; /* Pousse le texte à droite */
+        margin-right: 0; /* Pas de marge à droite */
+        text-align: right; /* Aligne le texte à droite */
+    }
 }
 
+/* Small devices (up to 768px wide) - Mobile */
+@media (max-width: 768px) {
     .hero {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        padding-top: 0px;
+        padding-top: var(--hero-padding-bottom);
         padding-bottom: 40px;
     }
 
-    .lead,
-    .card-text,
-    .text-muted,
-    .text-dark {
-        font-size: 0.78rem;
-        line-height: 1.6;
+    section {
+        padding-top: var(--section-padding-y-md);
+        padding-bottom: var(--section-padding-y-md);
     }
 
     .hero h1 {
-        font-size: 1.3rem;
-        line-height: 1.5;
+        font-size: 1.6rem;
+        line-height: 1.4;
         white-space: normal;
-        text-align: center;
+        text-align: center !important;
         display: block;
     }
 
-    .hero h1 strong {
-        display: inline;
-    }
-
     .lead {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center !important;
     }
 
     .hero-logo {
-        max-width: 280px;
-        width: 90%;
-        height: auto;
-        margin: 2rem auto;
+        max-width: 250px;
+        width: 80%;
+        margin: 1.5rem auto 2rem auto;
     }
+
+    /* Navbar brand image adjustment for smaller screens */
+    .navbar-brand img {
+        height: 45px;
+    }
+
+    /* Réintroduire un padding standard pour le container-fluid de la navbar */
+    .navbar .container-fluid {
+        padding-left: var(--bs-gutter-x) !important; /* 1.5rem ou 24px */
+        padding-right: var(--bs-gutter-x) !important;
+    }
+    
+    /* Navbar toggler - ajustements pour l'espacement et la taille */
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem; /* Padding par défaut de Bootstrap ou légèrement ajusté */
+    }
+
 
     .display-4 {
         font-size: 1.8rem;
     }
 
-    .card-container {
-        min-height: unset;
-    }
-
-    .card-image {
-        height: auto;
-        background-size: contain;
-        aspect-ratio: 16 / 9;
-        /* pour garder des proportions propres */
-    }
-
     .card-text h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
-    #skills img {
-        max-width: unset;
-    }
-
-    #skills .img-fluid {
-        max-width: 100%;
-        margin: 0 auto;
-        display: block;
-    }
-
-    #skills .text-end {
-        text-align: center !important;
-        padding-right: 0 !important;
+    .card-text p {
+        font-size: 0.9rem;
     }
 
     .presence-item img {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
     }
 
     .presence-item h3 {
-        font-size: 1rem;
-    }
-
-    img.about {
-        margin-top: 0;
-        max-width: 100%;
-        height: auto;
+        font-size: 0.9rem;
     }
 
     .designer {
-        margin-top: 0;
-        max-width: 60%;
-        height: auto;
+        max-width: 70%;
     }
 
     form button[type="submit"] {
         width: 100%;
-        padding: 0.75rem;
-        font-size: 1.1rem;
+        padding: 0.6rem;
+        font-size: 1rem;
     }
 
-    .social-icons {
-        gap: 10px;
+    /* Skills section - Mobile adjustments for stacking and centering */
+    .skill-image {
+        margin-left: auto; /* Centre l'image */
+        margin-right: auto;
+        margin-bottom: 1rem; /* Moins d'espace sur mobile entre image et texte */
+    }
+
+    .skill-text-block {
+        text-align: center !important; /* Centre le texte sur mobile */
+        margin-left: auto; /* Centre le bloc de texte lui-même */
+        margin-right: auto;
+        max-width: 100%; /* S'assure qu'il prend toute la largeur disponible */
     }
 }
 
+/* Extra small devices (up to 480px wide) */
 @media (max-width: 480px) {
+    section {
+        padding-top: var(--section-padding-y-sm);
+        padding-bottom: var(--section-padding-y-sm);
+    }
+
+    .hero {
+        padding-top: calc(var(--navbar-height) + 0.5rem);
+        padding-bottom: var(--bs-gutter-x);
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+        text-align: center !important;
+    }
+
+    .lead {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center !important;
+    }
+
+    .hero-logo {
+        max-width: 200px;
+        margin: 1rem auto 1.5rem auto;
+    }
+
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+    }
+
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
     .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
+    }
+
+    .presence-grid {
+        gap: 30px;
+    }
+
+    .presence-item img {
+        width: 80px;
+        height: 80px;
+    }
+    .presence-item h3 {
+        font-size: 0.8rem;
+    }
+
+    .card-text h3 {
+        font-size: 1rem;
+    }
+
+    .card-text p {
+        font-size: 0.85rem;
     }
 }
