@@ -445,6 +445,10 @@ footer {
     opacity: 1;
 }
 
+.contact-img {
+    max-width: 50%;
+}
+
 /* --- MEDIA QUERIES --- */
 
 /* Styles pour desktop (min-width: 768px) */
@@ -666,5 +670,13 @@ footer {
         margin-top: auto;
         max-width: 100%;
         height: auto;
+    }
+
+    .contact-title {
+        font-size: 0.76rem;
+    }
+
+    .contact-img {
+        max-width: 100%;
     }
 }
