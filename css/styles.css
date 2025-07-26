@@ -8,14 +8,19 @@
     --divider: #EDEDED;
 
     /* Responsive Spacing */
-    --bs-gutter-x: 1.5rem; /* Bootstrap's default horizontal gutter (24px) */
-    --section-padding-y: 9rem; /* For large sections (144px) */
-    --section-padding-y-md: 4rem; /* (64px) */
-    --section-padding-y-sm: 2.5rem; /* (40px) */
+    --bs-gutter-x: 1.5rem;
+    /* Bootstrap's default horizontal gutter (24px) */
+    --section-padding-y: 9rem;
+    /* For large sections (144px) */
+    --section-padding-y-md: 4rem;
+    /* (64px) */
+    --section-padding-y-sm: 2.5rem;
+    /* (40px) */
 
     --hero-padding-top: 140px;
     --hero-padding-bottom: 60px;
-    --hero-padding-x: 3rem; /* (48px) Default for larger screens */
+    --hero-padding-x: 3rem;
+    /* (48px) Default for larger screens */
 
     --navbar-height: 70px;
 }
@@ -25,13 +30,12 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    /* !!! TRÈS IMPORTANT : RETIREZ CETTE LIGNE EN PRODUCTION. Elle est la cause de nombreux problèmes de débordement. */
-    /* outline: 1px solid red; */
 }
 
 html {
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar on HTML */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar on HTML */
 }
 
 body {
@@ -39,11 +43,14 @@ body {
     color: var(--text-dark);
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
-    padding-top: var(--navbar-height); /* Space for fixed navbar */
+    padding-top: var(--navbar-height);
+    /* Space for fixed navbar */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
-    text-shadow: 0.04em 0 0 currentColor; /* Subtle text shadow for crispness */
+    min-height: 100vh;
+    /* Ensure body takes at least full viewport height */
+    text-shadow: 0.04em 0 0 currentColor;
+    /* Subtle text shadow for crispness */
 
     /* Contrôle de largeur pour le body pour éviter tout débordement global */
     width: 100%;
@@ -65,14 +72,19 @@ strong {
 .jp-text {
     font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
     line-height: 1.6;
-    word-break: keep-all; /* Prevents breaking Japanese words in the middle */
-    overflow-wrap: break-word; /* Allows long words to break if necessary */
-    line-break: strict; /* Controls how lines are broken */
-    text-wrap: pretty; /* Modern text wrapping property for better aesthetics */
+    word-break: keep-all;
+    /* Prevents breaking Japanese words in the middle */
+    overflow-wrap: break-word;
+    /* Allows long words to break if necessary */
+    line-break: strict;
+    /* Controls how lines are broken */
+    text-wrap: pretty;
+    /* Modern text wrapping property for better aesthetics */
 }
 
 main {
-    flex: 1; /* Allows main content to grow and push footer down */
+    flex: 1;
+    /* Allows main content to grow and push footer down */
     display: flex;
     flex-direction: column;
 }
@@ -101,7 +113,8 @@ section {
     margin-right: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    overflow-x: hidden; /* Cache tout débordement interne */
+    overflow-x: hidden;
+    /* Cache tout débordement interne */
 }
 
 .navbar .navbar-nav {
@@ -118,16 +131,20 @@ section {
 }
 
 .navbar-brand img {
-    height: 60px; /* Default height for larger screens */
-    width: auto; /* Width scales proportionally */
-    max-width: 100%; /* S'assurer qu'il ne dépasse pas la largeur de son parent */
+    height: 60px;
+    /* Default height for larger screens */
+    width: auto;
+    /* Width scales proportionally */
+    max-width: 100%;
+    /* S'assurer qu'il ne dépasse pas la largeur de son parent */
 }
 
 /* HERO SECTION */
 .hero {
     padding-top: var(--hero-padding-top);
     padding-bottom: var(--hero-padding-bottom);
-    text-align: center; /* Ensures text and inline elements are centered by default */
+    text-align: center;
+    /* Ensures text and inline elements are centered by default */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,7 +173,8 @@ section {
 .lead {
     font-size: 1.25rem;
     color: var(--text-dark);
-    text-align: center; /* Explicitly center lead text */
+    text-align: center;
+    /* Explicitly center lead text */
 }
 
 .text-primary,
@@ -180,6 +198,7 @@ section {
     border-color: var(--accent-orange);
     color: var(--bg-white);
 }
+
 .btn-success:hover {
     background-color: var(--accent-gold);
     border-color: var(--accent-gold);
@@ -209,7 +228,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 400px; /* Keep minimum height for consistent cards */
+    min-height: 400px;
+    /* Keep minimum height for consistent cards */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -256,28 +276,41 @@ section {
 
 /* Conteneur de chaque paire image/texte */
 .skill-pair {
-    margin-bottom: 5rem; /* Espacement entre les paires, ajustez si nécessaire */
-    text-align: center; /* Pour centrer les blocs sur mobile par défaut */
+    margin-bottom: 5rem;
+    /* Espacement entre les paires, ajustez si nécessaire */
+    text-align: center;
+    /* Pour centrer les blocs sur mobile par défaut */
 }
 
 /* Styles pour les images */
 .skill-image {
-    max-width: 400px; /* Taille max de l'image comme avant */
-    width: 100%; /* S'adapte à la largeur du parent */
+    max-width: 400px;
+    /* Taille max de l'image comme avant */
+    width: 100%;
+    /* S'adapte à la largeur du parent */
     height: auto;
-    display: block; /* Important pour les marges automatiques */
-    margin-bottom: 1.5rem; /* Espace entre l'image et le texte en dessous */
-    margin-left: 0; /* Par défaut aligné à gauche */
-    margin-right: auto; /* Pousse l'image à gauche si l'espace est plus large que max-width */
+    display: block;
+    /* Important pour les marges automatiques */
+    margin-bottom: 1.5rem;
+    /* Espace entre l'image et le texte en dessous */
+    margin-left: 0;
+    /* Par défaut aligné à gauche */
+    margin-right: auto;
+    /* Pousse l'image à gauche si l'espace est plus large que max-width */
 }
 
 /* Styles pour les blocs de texte */
 .skill-text-block {
-    text-align: right; /* Par défaut, aligné à droite pour le desktop */
-    width: 100%; /* Prend toute la largeur disponible */
-    max-width: 600px; /* Conserver une max-width pour le texte si souhaité */
-    margin-left: auto; /* Pousse le texte à droite dans le conteneur */
-    margin-right: auto; /* Permet un centrage sur mobile */
+    text-align: right;
+    /* Par défaut, aligné à droite pour le desktop */
+    width: 100%;
+    /* Prend toute la largeur disponible */
+    max-width: 600px;
+    /* Conserver une max-width pour le texte si souhaité */
+    margin-left: auto;
+    /* Pousse le texte à droite dans le conteneur */
+    margin-right: auto;
+    /* Permet un centrage sur mobile */
 }
 
 /* ABOUT SECTION */
@@ -416,17 +449,23 @@ footer {
 
 /* Styles pour desktop (min-width: 768px) */
 @media (min-width: 768px) {
+
     /* Image en haut à gauche - déjà géré par les styles par défaut (.skill-image) */
     .skill-image {
-        margin-left: 0; /* S'assurer qu'il est à gauche de son conteneur */
-        margin-right: auto; /* Pousse l'image à gauche */
+        margin-left: 0;
+        /* S'assurer qu'il est à gauche de son conteneur */
+        margin-right: auto;
+        /* Pousse l'image à gauche */
     }
 
     /* Texte en bas à droite - déjà géré par les styles par défaut (.skill-text-block) */
     .skill-text-block {
-        margin-left: auto; /* Pousse le texte à droite */
-        margin-right: 0; /* Pas de marge à droite */
-        text-align: right; /* Aligne le texte à droite */
+        margin-left: auto;
+        /* Pousse le texte à droite */
+        margin-right: 0;
+        /* Pas de marge à droite */
+        text-align: right;
+        /* Aligne le texte à droite */
     }
 }
 
@@ -473,13 +512,15 @@ footer {
 
     /* Réintroduire un padding standard pour le container-fluid de la navbar */
     .navbar .container-fluid {
-        padding-left: var(--bs-gutter-x) !important; /* 1.5rem ou 24px */
+        padding-left: var(--bs-gutter-x) !important;
+        /* 1.5rem ou 24px */
         padding-right: var(--bs-gutter-x) !important;
     }
-    
+
     /* Navbar toggler - ajustements pour l'espacement et la taille */
     .navbar-toggler {
-        padding: 0.25rem 0.75rem; /* Padding par défaut de Bootstrap ou légèrement ajusté */
+        padding: 0.25rem 0.75rem;
+        /* Padding par défaut de Bootstrap ou légèrement ajusté */
     }
 
 
@@ -516,16 +557,28 @@ footer {
 
     /* Skills section - Mobile adjustments for stacking and centering */
     .skill-image {
-        margin-left: auto; /* Centre l'image */
+        margin-left: auto;
+        /* Centre l'image */
         margin-right: auto;
-        margin-bottom: 1rem; /* Moins d'espace sur mobile entre image et texte */
+        margin-bottom: 1rem;
+        /* Moins d'espace sur mobile entre image et texte */
     }
 
     .skill-text-block {
-        text-align: center !important; /* Centre le texte sur mobile */
-        margin-left: auto; /* Centre le bloc de texte lui-même */
+        text-align: center !important;
+        /* Centre le texte sur mobile */
+        margin-left: auto;
+        /* Centre le bloc de texte lui-même */
         margin-right: auto;
-        max-width: 100%; /* S'assure qu'il prend toute la largeur disponible */
+        max-width: 100%;
+        /* S'assure qu'il prend toute la largeur disponible */
+    }
+
+    /* ABOUT SECTION */
+    img.about {
+        margin-top: auto;
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -550,11 +603,15 @@ footer {
     }
 
     .lead {
-        font-size: 0.8rem;
+        font-size: 0.41rem;
         line-height: 1.4;
         padding-left: 0;
         padding-right: 0;
         text-align: center !important;
+    }
+
+    .text-dark {
+        font-size: 0.41rem;
     }
 
     .hero-logo {
@@ -591,6 +648,7 @@ footer {
         width: 80px;
         height: 80px;
     }
+
     .presence-item h3 {
         font-size: 0.8rem;
     }
@@ -601,5 +659,12 @@ footer {
 
     .card-text p {
         font-size: 0.85rem;
+    }
+
+    /* ABOUT SECTION */
+    img.about {
+        margin-top: auto;
+        max-width: 100%;
+        height: auto;
     }
 }
