@@ -607,7 +607,7 @@ footer {
     }
 
     .lead {
-        font-size: 0.41rem;
+        font-size: 0.6rem;
         line-height: 1.4;
         padding-left: 0;
         padding-right: 0;
@@ -615,7 +615,7 @@ footer {
     }
 
     .text-dark {
-        font-size: 0.41rem;
+        font-size: 0.6rem;
     }
 
     .hero-logo {
