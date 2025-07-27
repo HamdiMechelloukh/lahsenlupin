@@ -17,7 +17,7 @@
     --section-padding-y-sm: 2.5rem;
     /* (40px) */
 
-    --hero-padding-top: 140px;
+    --hero-padding-top: 60px;
     --hero-padding-bottom: 60px;
     --hero-padding-x: 3rem;
     /* (48px) Default for larger screens */
@@ -155,9 +155,9 @@ section {
 .hero-logo {
     width: 100%;
     height: auto;
-    max-width: 750px;
+    max-width: 800px;
     display: block;
-    margin: 2rem auto 3rem auto;
+    margin: 2rem auto 6rem auto;
 }
 
 .colordesign {
@@ -276,7 +276,7 @@ section {
 
 /* Conteneur de chaque paire image/texte */
 .skill-pair {
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
     /* Espacement entre les paires, ajustez si nécessaire */
     text-align: center;
     /* Pour centrer les blocs sur mobile par défaut */
@@ -291,7 +291,7 @@ section {
     height: auto;
     display: block;
     /* Important pour les marges automatiques */
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
     /* Espace entre l'image et le texte en dessous */
     margin-left: 0;
     /* Par défaut aligné à gauche */
@@ -564,9 +564,14 @@ footer {
         margin-left: auto;
         /* Centre l'image */
         margin-right: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
         /* Moins d'espace sur mobile entre image et texte */
     }
+
+    .skill-pair {
+    margin-bottom: 5rem;
+    text-align: center;
+}
 
     .skill-text-block {
         text-align: center !important;
@@ -594,7 +599,7 @@ footer {
     }
 
     .hero {
-        padding-top: calc(var(--navbar-height) + 0.5rem);
+        padding-top: 0.75rem;
         padding-bottom: var(--bs-gutter-x);
         padding-left: 0.75rem;
         padding-right: 0.75rem;
@@ -619,7 +624,7 @@ footer {
     }
 
     .hero-logo {
-        max-width: 200px;
+        max-width: 300px;
         margin: 1rem auto 1.5rem auto;
     }
 
