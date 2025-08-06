@@ -284,7 +284,7 @@ section {
 
 /* Styles pour les images */
 .skill-image {
-    max-width: 400px;
+    max-width: 500px;
     /* Taille max de l'image comme avant */
     width: 100%;
     /* S'adapte à la largeur du parent */
@@ -593,6 +593,13 @@ footer {
 
 /* Extra small devices (up to 480px wide) */
 @media (max-width: 480px) {
+
+    .skill-image {
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 400px;
+    width: 100%;
+}
     section {
         padding-top: var(--section-padding-y-sm);
         padding-bottom: var(--section-padding-y-sm);
